@@ -56,7 +56,7 @@ def save_file(root):
         text_window.insert(tk.END, f"Error saving file:\n{e}")
 
 def open_file(root):
-    ext_window = root.focus_get()
+    text_window = root.focus_get()
     if not isinstance(text_window, tk.Text):
         return
     filepath = askopenfilename(
@@ -176,6 +176,11 @@ root.bind("<Command-Shift-Z>", lambda e: redo(root, e))
 
 root.bind("<Control-Shift-I>", lambda e: switch(root, e))
 root.bind("<Command-Shift-I>", lambda e: switch(root, e))
+
+root.bind("<Control-s>", lambda x: save_file(root))
+root.bind("<Command-s>", lambda x: save_file(root))
+root.bind("<Control-o>", lambda e: open_file(root))
+root.bind("<Command-o>", lambda e: open_file(root))
 
 def on_mousewheel(event, source, target):
     system = platform.system()
