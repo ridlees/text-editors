@@ -12,7 +12,7 @@ def get_api_key():
     key = keyring.get_password(APP_NAME, API_KEY_NAME)
     if not key:
         key = simpledialog.askstring("API Key Required", 
-                                     "Please enter your API key:",
+                                     "Please enter your Deepl API key:",
                                      show='*')  
         if key:
             keyring.set_password(APP_NAME, API_KEY_NAME, key)
@@ -123,11 +123,11 @@ btn_open.pack(side=tk.LEFT, padx=2, pady=2)
 btn_save = tk.Button(toolbar, text="Save", command=lambda: save_file(root))
 btn_save.pack(side=tk.LEFT, padx=2, pady=2)
 
-btn_translate = tk.Button(toolbar, text="Translate", command=lambda: translate_text(root))
-btn_translate.pack(side=tk.LEFT, padx=2, pady=2)
+#btn_translate = tk.Button(toolbar, text="Translate", command=lambda: translate_text(root))
+#btn_translate.pack(side=tk.LEFT, padx=2, pady=2)
 
-btn_reset = tk.Button(toolbar, text="Delete API Key", command=reset_api_key)
-btn_reset.pack(side=tk.LEFT, padx=2, pady=2)
+#btn_reset = tk.Button(toolbar, text="Delete API Key", command=reset_api_key)
+#btn_reset.pack(side=tk.LEFT, padx=2, pady=2)
 
 text1 = tk.Text(frame, bd=0, undo=True, maxundo=-1, wrap='word')
 text2 = tk.Text(frame, bd=0, undo=True, maxundo=-1, wrap='word')
